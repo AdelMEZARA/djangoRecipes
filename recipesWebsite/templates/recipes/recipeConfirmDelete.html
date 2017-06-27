@@ -1,0 +1,13 @@
+{% extends '_base.html' %}
+
+{% block page_title %} Delete Recipe {% endblock %}
+
+{% block body_content %}
+
+    <form method="post">
+        {% csrf_token %}
+        Are you sure you want to delete "{{ object }}" ?
+        <input type="submit" value="Submit" />
+    </form>
+
+{% endblock %}

@@ -40,3 +40,7 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.name
+
+class RecipeAttachment(models.Model):
+    recipe = models.ForeignKey(Recipe, verbose_name='Recipe')
+    file = models.ImageField('Attachement', upload_to='attachments')

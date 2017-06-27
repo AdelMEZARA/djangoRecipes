@@ -1,0 +1,80 @@
+{% extends '_base.html' %}
+{% load widget_tweaks %}
+
+{% block age_title %}Ajouter/modifier une recette{% endblock %}
+
+{% block body_content %}
+<div class="container">
+    <h1>Informations concernant la recette</h1>
+    <form method="post" enctype="multipart/form-data" class="form-horizontal">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label class="control-label col-sm-2">{{ form.name.label }}</label>
+            <div class="col-sm-6">
+                {{ form.name|attr:'class:form-control'|attr:'placeholder:Nom de la recette' }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">{{ form.type.label }}</label>
+            <div class="col-sm-6">
+                {{ form.type|attr:'class:form-control' }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">{{ form.difficultyLevel.label }}</label>
+            <div class="col-sm-6">
+                {{ form.difficultyLevel|attr:'class:form-control' }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">{{ form.cost.label }}</label>
+            <div class="col-sm-6">
+                {{ form.cost|attr:'class:form-control'|attr:'placeholder:Coût de la recette' }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">{{ form.prepareTime.label }}</label>
+            <div class="col-sm-6">
+                {{ form.prepareTime|attr:'class:form-control'|attr:'placeholder:Temps de préparation en minutes' }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">{{ form.cookTime.label }}</label>
+            <div class="col-sm-6">
+                {{ form.cookTime|attr:'class:form-control'|attr:'placeholder:Temps de cuisson en minutes' }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">{{ form.restTime.label }}</label>
+            <div class="col-sm-6">
+                {{ form.restTime|attr:'class:form-control'|attr:'placeholder:Temps de repos en minutes' }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">{{ form.steps.label }}</label>
+            <div class="col-sm-6">
+                {{ form.steps|attr:'class:form-control'|attr:'placeholder:Décrivez les étapes de préparation de votre recette' }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">{{ form.ingredientList.label }}</label>
+            <div class="col-sm-6">
+                {{ form.ingredientList|attr:'class:form-control'|attr:'placeholder:Veuillez indiquer les ingrédients qui seront utilisés' }}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Fichiers</label>
+            <div class="col-sm-6">
+                <input type="file" name="files" required="" id="id_files" multiple="multiple">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-10">
+                <input type="submit" value="Valider" class="btn btn-success"/>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

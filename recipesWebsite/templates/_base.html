@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 {%  load static %}
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
-        <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 
-        {% block page_title %}{% endblock %}
-    </head>
-    <body>
-
-        {% block body_content %}{% endblock %}
-    </body>
+    <title>{% block page_title %}{% endblock %}</title>
+</head>
+<body>
+    {% block body_content %}{% endblock %}
+</body>
 </html>

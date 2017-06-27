@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'recipesWebsite',
+    'widget_tweaks',
+    'multiupload',
 ]
 
 MIDDLEWARE = [
@@ -114,13 +116,20 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
+
+STATICFILES_DIRS = (
+  os.path.join(SITE_ROOT, 'static/'),
+)
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/djangoRecipes/index'
 LOGIN_URL = '/djangoRecipes/userLogin'
+
+MEDIA_ROOT = os.path.join(SITE_ROOT, 'media')
+MEDIA_URL = '/media/'
 
 

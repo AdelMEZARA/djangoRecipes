@@ -10,7 +10,6 @@ db.sqlite3
 media
 __pycache__
 myvenv
-/static
 .DS_Store
 recipesWebsite/migrations/*
 djangoRecipes/media/*
