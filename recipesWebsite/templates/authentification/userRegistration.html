@@ -1,0 +1,19 @@
+{% extends '_base.html' %}
+
+{% block page_title %}<title>User Registration</title>{% endblock %}
+
+{% block body_content %}
+    <h1> Welcome to Django Recipes ! - but first let's create your account : </h1>
+
+    {{ message }}
+
+    <form action="{% url 'recipesWebsite:userRegistration' %}" method="post">
+        <fieldset>
+            <legend> Your personal data  :</legend>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit"/>
+        </fieldset>
+    </form>
+
+{% endblock %}

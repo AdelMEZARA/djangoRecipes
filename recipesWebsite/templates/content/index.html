@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+
+{% block page_title %}<title>Index</title>{% endblock %}
+
+{% block body_content %}
+    <h2> welcome to the index</h2>
+
+    {% if request.user.is_authenticated %}
+        <h2>Connected</h2>
+    <a href="{% url 'recipesWebsite:userLogout' %}">Disconnected</a>
+    {% else %}
+        <h2> Disconnected</h2>
+    {% endif %}
+{% endblock %}
