@@ -1,6 +1,9 @@
+import django_filters
+
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+
 from recipesWebsite.models import Recipe, RecipeAttachment
 from multiupload.fields import MultiFileField
 
@@ -23,3 +26,13 @@ class RecipeForm(forms.ModelForm):
             RecipeAttachment.objects.create(file=each, recipe=instance)
 
          return instance
+
+class RecipeFilter(django_filters.FilterSet):
+
+    class Meta:
+        model = Recipe
+        fields = {
+            'name': ['icontains'],
+            'type': ['exact'],
+        }
+        order_by = True

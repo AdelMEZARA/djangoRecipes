@@ -7,7 +7,8 @@
     <form method="post">
         {% csrf_token %}
         Are you sure you want to delete "{{ object }}" ?
-        <input type="submit" value="Submit" />
+        <a href="{% url 'recipesWebsite:listRecipe' %}" class="btn btn-secondary" role="button">Annuler</a>
+        <button type="submit" class="btn btn-primary">Oui</button>
     </form>
 
 {% endblock %}

@@ -1,0 +1,37 @@
+{% extends '_base.html' %}
+
+{% block page_title %}Consultation d'une recette{% endblock %}
+
+{% load static %}
+
+{% block body_content %}
+
+  <p>
+      {{ recipe.name }}
+  </p>
+
+  <p>Type : {{ recipe.get_type_display }}</p>
+
+  <p>Niveau de difficulté : {{ recipe.get_difficultyLevel_display }}</p>
+
+  <p>Coût : {{ recipe.cost|default:"0" }} €</p>
+
+  <p>Temps de préparation : {{ recipe.prepareTime|default:"0" }} min.</p>
+
+  <p>Temps de cuisson : {{ recipe.cookTime|default:"0" }} min.</p>
+
+  <p>Temps de repos : {{ recipe.restTime|default:"0" }} min.</p>
+
+  <p>Liste des ingrédients : {{ recipe.ingredientList }}</p>
+
+  <p>Liste des étapes : {{ recipe.steps }}</p>
+
+  <p>Liste des images :</p>
+  {% for image in images %}
+      <img src="/media/{{ image.file }}" width="100" height="100"/>
+  {% endfor %}
+
+  </br>
+  </br>
+
+{% endblock %}

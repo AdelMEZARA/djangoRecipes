@@ -13,4 +13,6 @@ urlpatterns = [
     url(r'^addRecipe/$', views.addRecipe, name='addRecipe'),
     url(r'^editRecipe/(\d+)/$', views.editRecipe, name='editRecipe'),
     url(r'^deleteRecipe/(\d+)/$', views.deleteRecipe, name='deleteRecipe'),
+    url(r'^showRecipe/(\d+)/$', views.showRecipe, name='showRecipe'),
+    url(r'^listRecipe/$', views.listRecipe, name='listRecipe'),
 ]
