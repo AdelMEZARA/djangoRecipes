@@ -15,4 +15,5 @@ urlpatterns = [
     url(r'^deleteRecipe/(\d+)/$', views.deleteRecipe, name='deleteRecipe'),
     url(r'^showRecipe/(\d+)/$', views.showRecipe, name='showRecipe'),
     url(r'^listRecipe/$', views.listRecipe, name='listRecipe'),
+    url(r'^addComment/(\d+)/$', views.addComment, name='addComment'),
 ]

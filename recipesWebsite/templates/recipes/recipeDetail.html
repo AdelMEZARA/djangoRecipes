@@ -34,4 +34,55 @@
   </br>
   </br>
 
+  <p><b>Commentaires : {{ totalComments }}</b></p>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Content</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for comment in comments %}
+        <tr>
+          <td>{{ comment.user.username }}</td>
+          <td>{{ comment.content }}</td>
+          <td>{{ comment.createdAt }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% if comments.has_other_pages %}
+    <ul class="pagination">
+      {% if comments.has_previous %}
+        <li><a href="?page={{ comments.previous_page_number }}">&laquo;</a></li>
+      {% else %}
+        <li class="disabled"><span>&laquo;</span></li>
+      {% endif %}
+      {% for i in comments.paginator.page_range %}
+        {% if comments.number == i %}
+          <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+        {% else %}
+          <li><a href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+      {% endfor %}
+      {% if comments.has_next %}
+        <li><a href="?page={{ comments.next_page_number }}">&raquo;</a></li>
+      {% else %}
+        <li class="disabled"><span>&raquo;</span></li>
+      {% endif %}
+    </ul>
+  {% endif %}
+
+  {% if request.user.is_authenticated %}
+    <form class="comment_form" action="{% url 'recipesWebsite:addComment' recipe.id %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Comment" />
+    </form>
+  {% endif %}
+
 {% endblock %}

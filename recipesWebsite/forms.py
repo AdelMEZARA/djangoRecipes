@@ -4,7 +4,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-from recipesWebsite.models import Recipe, RecipeAttachment
+from recipesWebsite.models import Recipe, RecipeAttachment, RecipeComment
 from multiupload.fields import MultiFileField
 
 class RegisterUserForm(UserCreationForm):
@@ -36,3 +36,8 @@ class RecipeFilter(django_filters.FilterSet):
             'type': ['exact'],
         }
         order_by = True
+
+class RecipeCommentForm(forms.ModelForm):
+    class Meta:
+        model = RecipeComment
+        exclude = ['recipe', 'user']

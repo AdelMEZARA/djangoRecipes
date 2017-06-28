@@ -5,8 +5,8 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import HttpResponseForbidden
 from django.shortcuts import render, redirect, get_object_or_404
-from recipesWebsite.forms import RegisterUserForm, RecipeForm, RecipeFilter
-from recipesWebsite.models import Recipe, RecipeAttachment
+from recipesWebsite.forms import RegisterUserForm, RecipeForm, RecipeFilter, RecipeCommentForm
+from recipesWebsite.models import Recipe, RecipeAttachment, RecipeComment
 from django.contrib.auth import logout
 
 # View used to create an account
@@ -84,5 +84,39 @@ def deleteRecipe(request, recipeId):
 def showRecipe(request, recipeId):
     recipe = get_object_or_404(Recipe, id=recipeId)
     images = RecipeAttachment.objects.filter(recipe=recipe)
+    comments = RecipeComment.objects.filter(recipe=recipe)
 
-    return render(request, 'recipes/recipeDetail.html', {'recipe': recipe, 'images': images})
+    totalComments = comments.count()
+
+    page = request.GET.get('page', 1)
+
+    paginator = Paginator(comments, 10)
+    try:
+        comments = paginator.page(page)
+    except PageNotAnInteger:
+        comments = paginator.page(1)
+    except EmptyPage:
+        comments = paginator.page(paginator.num_pages)
+
+    form = RecipeCommentForm()
+
+    return render(request, 'recipes/recipeDetail.html',
+        {
+            'recipe': recipe,
+            'images': images,
+            'comments': comments,
+            'totalComments': totalComments,
+            'form': form
+        })
+
+@login_required
+def addComment(request, recipeId):
+    if request.method == 'POST':
+        form = RecipeCommentForm(request.POST)
+        if form.is_valid():
+            c = RecipeComment()
+            c.content = form.cleaned_data['content']
+            c.recipe = get_object_or_404(Recipe, id=recipeId)
+            c.user = request.user
+            c.save()
+        return redirect('recipesWebsite:showRecipe', recipeId)

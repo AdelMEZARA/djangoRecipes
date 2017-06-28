@@ -44,3 +44,15 @@ class Recipe(models.Model):
 class RecipeAttachment(models.Model):
     recipe = models.ForeignKey(Recipe, verbose_name='Recipe')
     file = models.ImageField('Attachement', upload_to='attachments')
+
+class RecipeComment(models.Model):
+    recipe = models.ForeignKey(Recipe, verbose_name='Recipe')
+    user = models.ForeignKey(User, verbose_name='user')
+
+    content = models.TextField("Commentaire")
+
+    createdAt = models.DateTimeField("Date de création", auto_now_add=True)
+    updatedAt = models.DateTimeField("Date de modification", auto_now=True)
+
+    def __str__(self):
+        return self.content
