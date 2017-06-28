@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'recipesWebsite',
     'widget_tweaks',
     'multiupload',
-    'django_filters'
+    'django_filters',
+    'star_ratings',
 ]
 
 MIDDLEWARE = [

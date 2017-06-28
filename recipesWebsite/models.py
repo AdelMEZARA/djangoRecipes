@@ -2,8 +2,11 @@
 from __future__ import unicode_literals
 
 from django.contrib.auth.models import User
+from django.contrib.contenttypes.fields import GenericRelation
 from django.core import validators
 from django.db import models
+from star_ratings.models import Rating
+
 
 class Recipe(models.Model):
     name = models.CharField("Nom de la recette", max_length=200)
@@ -37,6 +40,8 @@ class Recipe(models.Model):
 
     createdAt = models.DateTimeField("Date de création", auto_now_add=True)
     updatedAt = models.DateTimeField("Date de modification", auto_now=True)
+
+    ratings = GenericRelation(Rating, related_query_name='recipes')
 
     def __str__(self):
         return self.name

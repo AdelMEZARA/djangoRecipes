@@ -30,6 +30,12 @@
         <a href="{% url 'recipesWebsite:showRecipe' obj.id %}">{{ obj.name }}</a>
         -
         {{ obj.user.username }}
+        -
+        {% if obj.ratings.get.average > 0 %}
+            Note : {{ obj.ratings.get.average }}
+        {% endif %}
+
+
         {% if request.user.is_authenticated and obj.user.id == request.user.id %}
         <a href="{% url 'recipesWebsite:editRecipe' obj.id %}">Modifier</a>
         <a href="{% url 'recipesWebsite:deleteRecipe' obj.id %}">Supprimer</a>

@@ -3,6 +3,7 @@
 {% block page_title %}Consultation d'une recette{% endblock %}
 
 {% load static %}
+{% load ratings %}
 
 {% block body_content %}
 
@@ -33,6 +34,11 @@
 
   </br>
   </br>
+  {% ratings recipe %}
+  </br>
+  </br>
+
+
 
   <p><b>Commentaires : {{ totalComments }}</b></p>
 

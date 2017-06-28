@@ -23,6 +23,7 @@ from djangoRecipes import settings
 urlpatterns = [
     url(r'^djangoRecipes/', include('recipesWebsite.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^ratings/', include('star_ratings.urls', namespace='ratings', app_name='ratings')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
