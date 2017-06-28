@@ -31,9 +31,11 @@ def index(request):
     return render(request, "content/index.html")
 
 def listRecipe(request):
+    filter = RecipeFilter(request.GET, queryset=Recipe.objects.all())
+
     page = request.GET.get('page', 1)
 
-    paginator = Paginator(Recipe.objects.all(), 10)
+    paginator = Paginator(filter.qs, 10)
     try:
         results = paginator.page(page)
     except PageNotAnInteger:
@@ -41,7 +43,7 @@ def listRecipe(request):
     except EmptyPage:
         results = paginator.page(paginator.num_pages)
 
-    return render(request, 'recipes/recipeList.html', {'results': results})
+    return render(request, 'recipes/recipeList.html', {'results': results, 'filter':filter})
 
 @login_required
 def addRecipe(request):
