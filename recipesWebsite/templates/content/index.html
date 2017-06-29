@@ -3,37 +3,35 @@
 {% block page_title %}Django Recipes{% endblock %}
 {% block body_content %}
 <div class="body">
-				<div>
-					<a href="#"><img src="/static/images/turkey.jpg" alt="Image"></a>
-				</div>
-				<ul>
-					<li class="current">
-						<a href="#"><img src="/static/images/holi-turkey.jpg" alt="Image"></a>
-						<div>
-							<h2><a href="#">Holy Turkey</a></h2>
-							<p>
-								This is just a place holder
-							</p>
-						</div>
-					</li>
-					<li>
-						<a href="#"><img src="/static/images/fruits-and-bread.jpg" alt="Image"></a>
-						<div>
-							<h2><a href="#">Fruits &amp; Bread</a></h2>
-							<p>
-								This is just a place holder
-							</p>
-						</div>
-					</li>
-					<li>
-						<a href="#"><img src="/static/images/dessert.jpg" alt="Image"></a>
-						<div>
-							<h2><a href="#">Dessert</a></h2>
-							<p>
-								This is just a place holder
-							</p>
-						</div>
-					</li>
-				</ul>
+    {% for obj in results %}
+        {% if forloop.first %}
+            <div>
+                <a href="{% url 'recipesWebsite:showRecipe' obj.id %}">
+                    {% with obj.recipeattachment_set.all|first as image %}
+                        <img src="/media/{{ image.file }}" width="708" height="425" alt="Image"/>
+                    {% endwith %}
+                </a>
+            </div>
+        {% endif %}
+
+        {% if forloop.first %}<ul>{% endif %}
+            <li {% if forloop.first %} class='current'{% endif %}>
+                <a href="{% url 'recipesWebsite:showRecipe' obj.id %}">
+                    {% with obj.recipeattachment_set.all|first as image %}
+                        <img src="/media/{{ image.file }}" width="60" height="60" alt="Image"/>
+                    {% endwith %}
+                </a>
+                <div>
+                    <h2><a href="{% url 'recipesWebsite:showRecipe' obj.id %}">{{ obj.name }}</a></h2>
+                    <p>
+                        {{ obj.get_type_display }}
+                    </p>
+                    <p>
+                        {{ obj.get_difficultyLevel_display }}
+                    </p>
+                </div>
+            </li>
+        {% if forloop.last %}</ul>{% endif %}
+    {% endfor %}
 </div>
 {% endblock %}

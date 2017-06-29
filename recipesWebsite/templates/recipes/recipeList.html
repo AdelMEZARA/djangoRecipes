@@ -9,7 +9,11 @@
                 <ul>
                     {% for obj in results %}
                     <li>
-                        <a href="{% url 'recipesWebsite:showRecipe' obj.id %}"><img src="/media/{{ obj.images.file }}" width="100" height="100"/></a>
+                        <a href="{% url 'recipesWebsite:showRecipe' obj.id %}">
+                            {% with obj.recipeattachment_set.all|first as image %}
+                                <img src="/media/{{ image.file }}" width="100" height="100"/>
+                            {% endwith %}
+                        </a>
                         <div>
                             <h3><a href="{% url 'recipesWebsite:showRecipe' obj.id %}">{{ obj.name }}{% if obj.ratings.get.average > 0 %}
                                  -  {{ obj.ratings.get.average }}/5</a>

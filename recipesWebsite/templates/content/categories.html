@@ -6,18 +6,18 @@
 <div class="footer">
     <ul>
         <li>
-            <h2><a href="#">Entrées</a></h2>
-            <a href="#"><img src="/static/images/featured.jpg" alt="Image"></a>
+            <h2><a href="{% url 'recipesWebsite:listRecipe' %}?type=E">Entrées</a></h2>
+            <a href="{% url 'recipesWebsite:listRecipe' %}?type=E"><img src="/static/images/featured.jpg" alt="Image"></a>
         </li>
         <li>
-            <h2><a href="#">Plats</a></h2>
-            <a href="#"><img src="/static/images/a-z.jpg" alt="Image"></a>
+            <h2><a href="{% url 'recipesWebsite:listRecipe' %}?type=P">Plats</a></h2>
+            <a href="{% url 'recipesWebsite:listRecipe' %}?type=P"><img src="/static/images/a-z.jpg" alt="Image"></a>
         </li>
     </ul>
     <ul>
         <li>
-            <h2><a href="#">Desserts</a></h2>
-            <a href="#"><img src="/static/images/videos.jpg" alt="Image"></a>
+            <h2><a href="{% url 'recipesWebsite:listRecipe' %}?type=D">Desserts</a></h2>
+            <a href="{% url 'recipesWebsite:listRecipe' %}?type=D"><img src="/static/images/videos.jpg" alt="Image"></a>
         </li>
     </ul>
 </div>

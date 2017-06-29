@@ -10,14 +10,14 @@
 				<div id="content">
 					<div>
 						<div>
-							<h3>{{ recipe.name }} - {% if request.user.is_authenticated %}
+							<h3>{{ recipe.name }} - {% if request.user.is_authenticated and recipe.user.id == request.user.id %}
                                 <a href="{% url 'recipesWebsite:editRecipe' recipe.id %}">Modifier</a> -
                                 <a href="{% url 'recipesWebsite:deleteRecipe' recipe.id %}">Supprimer</a>
                                 {% endif %}</h3>
 							<p>
 								This website template has been designed by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> for you, for free. You can replace all this text with your own text. You can remove any link to our website from this website template, you&#39;re free to use this website template without linking back to us. If you&#39;re having problems editing this website template, then don&#39;t hesitate to ask for help on the <a href="http://www.freewebsitetemplates.com/forums/">Forums</a>.
 							</p>
-							<a href="index.html"><img src="images/pork-barbeque.jpg" alt="Image"></a>
+							<a href="index.html"><img src="/images/pork-barbeque.jpg" alt="Image"></a>
 
                             <p>Type : {{ recipe.get_type_display }}</p>
 
@@ -53,6 +53,7 @@
                             {% ratings recipe %}
 
                           <h5>COMMENTAIRES ({{ totalComments }})</h5>
+                          {% if totalComments > 0 %}
                           <table border="1">
                             <tbody>
                               {% for comment in comments %}
@@ -64,6 +65,10 @@
                               {% endfor %}
                             </tbody>
                           </table>
+                          {% endif %}
+
+                        <br/>
+
                           {% if comments.has_other_pages %}
                             <ul class="pagination">
                               {% if comments.has_previous %}

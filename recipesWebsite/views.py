@@ -28,7 +28,8 @@ def userLogout(request):
     return redirect('recipesWebsite:index')
 
 def index(request):
-    return render(request, "content/index.html")
+    results = Recipe.objects.order_by('?').prefetch_related('recipeattachment_set')[:3]
+    return render(request, "content/index.html", {'results': results})
 
 def categories(request):
     return render(request, "content/categories.html")
@@ -37,8 +38,15 @@ def about(request):
     return render(request, "content/about.html")
 
 def listRecipe(request):
-    filter = RecipeFilter(request.GET, queryset=Recipe.objects.all())
 
+    top10 = request.GET.get('top10')
+
+    if top10 is not None:
+        results = Recipe.objects.order_by('-ratings__average').prefetch_related('recipeattachment_set')[:10]
+
+        return render(request, 'recipes/recipeList.html', {'results': results})
+
+    filter = RecipeFilter(request.GET, queryset=Recipe.objects.order_by('name'))
     page = request.GET.get('page', 1)
 
     paginator = Paginator(filter.qs, 10)
@@ -50,6 +58,7 @@ def listRecipe(request):
         results = paginator.page(paginator.num_pages)
 
     return render(request, 'recipes/recipeList.html', {'results': results, 'filter':filter})
+
 
 @login_required
 def addRecipe(request):
