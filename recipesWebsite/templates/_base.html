@@ -3,15 +3,111 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="shortcut icon" type="image/png" href="/static/images/favicon.ico"/>
 
     <title>{% block page_title %}{% endblock %}</title>
 </head>
 <body>
-    {% block body_content %}{% endblock %}
+    <div class="header">
+		<div>
+			<center><a href="{% url 'recipesWebsite:index' %}"><img src="/static/images/djangorecipes_logo.png" alt="Logo"></a></center>
+		</div>
+        <form action="{% url 'recipesWebsite:listRecipe' %}" method="get">
+            <input type="text" name="name__icontains" id="search" placeholder="Rechercher parmi nos meilleures recettes du Master I2L">
+            <input type="submit" value="" id="searchbtn">
+        </form>
+	</div>
+    <div class="body">
+        <div>
+			<div class="header">
+				<ul>
+                    {% url 'recipesWebsite:index' as index %}
+                    {% if request.get_full_path == index %}<li class="current">{% else %}<li>{% endif %}
+						<a href="{% url 'recipesWebsite:index' %}">Accueil</a>
+					</li>
+                    {% url 'recipesWebsite:categories' as categories %}
+                    {% if request.get_full_path == categories %}<li class="current">{% else %}<li>{% endif %}
+						<a href="{% url 'recipesWebsite:categories' %}">Catégories</a>
+					</li>
+					{% url 'recipesWebsite:listRecipe' as listRecipe %}
+                    {% if request.get_full_path == listRecipe %}<li class="current">{% else %}<li>{% endif %}
+						<a href="{% url 'recipesWebsite:listRecipe' %}">Recettes A-Z</a>
+					</li>
+                    {% if request.get_full_path == "/djangoRecipes/listRecipe/?name__icontains=f" %}<li class="current">{% else %}<li>{% endif %}
+						<a href="/djangoRecipes/listRecipe/?name__icontains=f">TOP 10</a>
+					</li>
+                    {% url 'recipesWebsite:about' as about %}
+                    {% if request.get_full_path == about %}<li class="current">{% else %}<li>{% endif %}
+						<a href="{% url 'recipesWebsite:about' %}">A propos</a>
+					</li>
+				</ul>
+			</div>
+            {% block body_content %}{% endblock %}
+		</div>
+        <div>
+            {% if request.user.is_authenticated %}
+            <div>
+				<a href="{% url 'recipesWebsite:addRecipe' %}"><img src="/static/images/addRecipe.png" height="100" width="200"></a>
+			</div>
+            {% else %}
+            <div>
+				<a href="{% url 'recipesWebsite:userLogin' %}"><img src="/static/images/login.png" height="auto" width="200"></a>
+			</div>
+            {% endif %}
+			<div>
+				<ul id="featured">
+                    <h3>Top Recette</h3>
+                    <li>
+						<a href="recipes.html"><img src="/static/images/sandwich.jpg" alt="Image"></a>
+						<div>
+							<h2><a href="recipes.html">Ham Sandwich</a></h2>
+						</div>
+					</li>
+                    <h3>Idées Recettes</h3>
+					<li>
+						<a href="recipes.html"><img src="/static/images/sandwich.jpg" alt="Image"></a>
+						<div>
+							<h2><a href="recipes.html">Ham Sandwich</a></h2>
+							<span>by: Anna</span>
+						</div>
+					</li>
+					<li>
+						<a href="recipes.html"><img src="/static/images/biscuit-and-coffee.jpg" alt="Image"></a>
+						<div>
+							<h2><a href="recipes.html">Biscuit &amp; Sandwich</a></h2>
+							<span>by: Sarah</span>
+						</div>
+					</li>
+					<li>
+						<a href="recipes.html"><img src="/static/images/pizza.jpg" alt="Image"></a>
+						<div>
+							<h2><a href="recipes.html">Delicious Pizza</a></h2>
+							<span>by: Rico</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+            <div>
+                <center>
+                    {% if request.user.is_authenticated %}
+                        <h5>Connecté en tant que :
+                        <b>{{ request.user.username }}</b></h5>
+                    {% endif %}
+				    <a href="{% url 'recipesWebsite:userLogout' %}"><img src="/static/images/logout.png" height="auto" width="200"></a>
+                </center>
+			</div>
+		</div>
+    </div>
+	<div class="footer">
+		<div>
+			<p>
+				Copyright &copy;  All rights reserved
+			</p>
+		</div>
+	</div>
 </body>
 </html>

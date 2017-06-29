@@ -1,14 +1,17 @@
 {% extends '_base.html' %}
 
-{% block page_title %} Delete Recipe {% endblock %}
+{% block page_title %}Suppression de la recette{% endblock %}
 
 {% block body_content %}
-
-    <form method="post">
-        {% csrf_token %}
-        Are you sure you want to delete "{{ object }}" ?
-        <a href="{% url 'recipesWebsite:listRecipe' %}" class="btn btn-secondary" role="button">Annuler</a>
-        <button type="submit" class="btn btn-primary">Oui</button>
-    </form>
+<div id="content">
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            <p>Vous êtes sur le point de supprimer la recette "{{ object }}", confirmer la suppression ?</p>
+            <p><a href="{% url 'recipesWebsite:showRecipe' object.id %}" role="button">Annuler</a>
+                <button type="submit">Confirmer</button></p>
+        </form>
+    </div>
+</div>
 
 {% endblock %}

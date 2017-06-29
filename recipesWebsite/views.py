@@ -30,6 +30,12 @@ def userLogout(request):
 def index(request):
     return render(request, "content/index.html")
 
+def categories(request):
+    return render(request, "content/categories.html")
+
+def about(request):
+    return render(request, "content/about.html")
+
 def listRecipe(request):
     filter = RecipeFilter(request.GET, queryset=Recipe.objects.all())
 
