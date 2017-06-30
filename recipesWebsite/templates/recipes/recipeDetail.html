@@ -10,7 +10,7 @@
 				<div id="content">
 					<div>
 						<div>
-                            <h3>{{ recipe.name }}</h3>
+                            <h3>{{ recipe.name }} par {{ recipe.user.username }}</h3>
                                 {% if request.user.is_authenticated and recipe.user.id == request.user.id %}
                                     <a href="{% url 'recipesWebsite:editRecipe' recipe.id %}"><img src="/static/images/edit_icon.png" height="30" width="auto"></a>
                                     <a href="{% url 'recipesWebsite:deleteRecipe' recipe.id %}"><img src="/static/images/delete_icon.png" height="30" width="auto"></a>

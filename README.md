@@ -1,6 +1,6 @@
 # djangoRecipes - "Jesse, it's time to cook !"
 
-Bienvenue sur le projet Django Recipes, un site web réalisé à l'aide du Framework Django par un groupe d'étudiants en Master I2L.
+Bienvenue sur le projet Django Recipes, un site web réalisé à l'aide du Framework Django par un groupe d'étudiants en Master I2L (Adel. M et Alexandre. J).
 
 Pour une utilisation rapide, veuillez suivre ces étapes :
 - pip install -r requirements.txt
@@ -20,4 +20,7 @@ alphabétique ou encore d'avoir le top 10 des recettes les mieux notées.
 Dans la sidebar, on peut retrouver les boutons pour Se connecter / S'enregistrer ou le bouton pour ajouter une nouvelle recette une fois connecté,
 en dessous se trouve la recette la mieux notée du site et enfin pour terminer, le dernier block de la sidebar propose aléatoirement 3 recettes à essayer.
 
-Ne perdez plus de temps, venez rejoindre la communauté Django Recipes et essayer une multitude de recettes !
+Vous pouvez à tout moment savoir sur quel compte vous êtes connecté en allant tout en bas de la sidebar, votre username est indiqué juste au dessus du bouton déconnexion.
+
+
+Ne perdez plus de temps, venez rejoindre la communauté Django Recipes et essayez une multitude de recettes !
