@@ -4,9 +4,9 @@ Bienvenue sur le projet Django Recipes, un site web réalisé à l'aide du Frame
 
 Pour une utilisation rapide, veuillez suivre ces étapes :
 - pip install -r requirements.txt
-- python manage.py loaddata data.json
 - python manage.py makemigrations recipesWebsite
 - python manage.py migrate
+- python manage.py loaddata data.json
 - python manage.py runserver
 
 
