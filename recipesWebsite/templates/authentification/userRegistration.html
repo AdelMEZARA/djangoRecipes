@@ -3,16 +3,21 @@
 {% block page_title %}User Registration{% endblock %}
 
 {% block body_content %}
-    <h1> Welcome to Django Recipes ! - but first let's create your account : </h1>
+    <br/>
 
-    {{ message }}
+    <center><h1> Bienvenue sur Django Recipes<br/>
+            Veuillez créer votre compte : </h1></center>
+
+    <br/>
 
     <form action="{% url 'recipesWebsite:userRegistration' %}" method="post">
         <fieldset>
-            <legend> Your personal data  :</legend>
+            <legend> Vos informations  :</legend>
+            <br/>
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value="Submit"/>
+            <br/>
+            <center><input type="submit" value="Submit"/></center>
         </fieldset>
     </form>
 
