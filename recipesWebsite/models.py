@@ -22,6 +22,8 @@ class Recipe(models.Model):
         (3, u'Difficile')
     )
 
+    description = models.TextField("Description")
+
     type = models.CharField("Type", max_length=24, choices=TYPE, default='P', editable=True)
 
     difficultyLevel = models.IntegerField("Niveau de difficulté", choices=DIFFICULTY, default='Simple')

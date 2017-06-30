@@ -28,23 +28,38 @@ def userLogout(request):
     return redirect('recipesWebsite:index')
 
 def index(request):
-    results = Recipe.objects.order_by('?').prefetch_related('recipeattachment_set')[:3]
-    return render(request, "content/index.html", {'results': results})
+    # _base.html data :
+    topRecipe = Recipe.objects.order_by('-ratings__average').prefetch_related('recipeattachment_set').first()
+    randomRecipes = Recipe.objects.order_by('?').prefetch_related('recipeattachment_set')[:3]
+
+    results = Recipe.objects.order_by('-createdAt').prefetch_related('recipeattachment_set')[:3]
+    return render(request, "content/index.html", {'results': results, 'topRecipe': topRecipe, 'randomRecipes': randomRecipes})
 
 def categories(request):
-    return render(request, "content/categories.html")
+    # _base.html data :
+    topRecipe = Recipe.objects.order_by('-ratings__average').prefetch_related('recipeattachment_set').first()
+    randomRecipes = Recipe.objects.order_by('?').prefetch_related('recipeattachment_set')[:3]
+
+    return render(request, "content/categories.html", {'topRecipe': topRecipe, 'randomRecipes': randomRecipes})
 
 def about(request):
-    return render(request, "content/about.html")
+    # _base.html data :
+    topRecipe = Recipe.objects.order_by('-ratings__average').prefetch_related('recipeattachment_set').first()
+    randomRecipes = Recipe.objects.order_by('?').prefetch_related('recipeattachment_set')[:3]
+
+    return render(request, "content/about.html", {'topRecipe': topRecipe, 'randomRecipes': randomRecipes})
 
 def listRecipe(request):
+    # _base.html data :
+    topRecipe = Recipe.objects.order_by('-ratings__average').prefetch_related('recipeattachment_set').first()
+    randomRecipes = Recipe.objects.order_by('?').prefetch_related('recipeattachment_set')[:3]
 
     top10 = request.GET.get('top10')
 
     if top10 is not None:
         results = Recipe.objects.order_by('-ratings__average').prefetch_related('recipeattachment_set')[:10]
 
-        return render(request, 'recipes/recipeList.html', {'results': results})
+        return render(request, 'recipes/recipeList.html', {'results': results, 'topRecipe': topRecipe, 'randomRecipes': randomRecipes})
 
     filter = RecipeFilter(request.GET, queryset=Recipe.objects.order_by('name'))
     page = request.GET.get('page', 1)
@@ -57,11 +72,15 @@ def listRecipe(request):
     except EmptyPage:
         results = paginator.page(paginator.num_pages)
 
-    return render(request, 'recipes/recipeList.html', {'results': results, 'filter':filter})
+    return render(request, 'recipes/recipeList.html', {'results': results, 'filter': filter, 'topRecipe': topRecipe, 'randomRecipes': randomRecipes})
 
 
 @login_required
 def addRecipe(request):
+    # _base.html data :
+    topRecipe = Recipe.objects.order_by('-ratings__average').prefetch_related('recipeattachment_set').first()
+    randomRecipes = Recipe.objects.order_by('?').prefetch_related('recipeattachment_set')[:3]
+
     if request.method == 'POST':
         form = RecipeForm(request.POST, request.FILES)
 
@@ -71,10 +90,14 @@ def addRecipe(request):
             return redirect('recipesWebsite:listRecipe')
     else:
         form = RecipeForm()
-    return render(request, 'recipes/recipeForm.html', {'form': form})
+    return render(request, 'recipes/recipeForm.html', {'form': form, 'topRecipe': topRecipe, 'randomRecipes': randomRecipes})
 
 @login_required
 def editRecipe(request, recipeId):
+    # _base.html data :
+    topRecipe = Recipe.objects.order_by('-ratings__average').prefetch_related('recipeattachment_set').first()
+    randomRecipes = Recipe.objects.order_by('?').prefetch_related('recipeattachment_set')[:3]
+
     recipe = get_object_or_404(Recipe, id=recipeId)
 
     if recipe.user.id != request.user.id:
@@ -84,10 +107,15 @@ def editRecipe(request, recipeId):
     if form.is_valid():
         form.save()
         return redirect('recipesWebsite:listRecipe')
-    return render(request, 'recipes/recipeForm.html', {'form': form})
+
+    return render(request, 'recipes/recipeForm.html', {'form': form, 'topRecipe': topRecipe, 'randomRecipes': randomRecipes})
 
 @login_required
 def deleteRecipe(request, recipeId):
+    # _base.html data :
+    topRecipe = Recipe.objects.order_by('-ratings__average').prefetch_related('recipeattachment_set').first()
+    randomRecipes = Recipe.objects.order_by('?').prefetch_related('recipeattachment_set')[:3]
+
     recipe = get_object_or_404(Recipe, id=recipeId)
 
     if recipe.user.id != request.user.id:
@@ -96,9 +124,14 @@ def deleteRecipe(request, recipeId):
     if request.method == 'POST':
         recipe.delete()
         return redirect('recipesWebsite:listRecipe')
-    return render(request, 'recipes/recipeConfirmDelete.html', {'object': recipe})
+
+    return render(request, 'recipes/recipeConfirmDelete.html', {'object': recipe, 'topRecipe': topRecipe, 'randomRecipes': randomRecipes})
 
 def showRecipe(request, recipeId):
+    # _base.html data :
+    topRecipe = Recipe.objects.order_by('-ratings__average').prefetch_related('recipeattachment_set').first()
+    randomRecipes = Recipe.objects.order_by('?').prefetch_related('recipeattachment_set')[:3]
+
     recipe = get_object_or_404(Recipe, id=recipeId)
     images = RecipeAttachment.objects.filter(recipe=recipe)
     comments = RecipeComment.objects.filter(recipe=recipe)
@@ -123,7 +156,9 @@ def showRecipe(request, recipeId):
             'images': images,
             'comments': comments,
             'totalComments': totalComments,
-            'form': form
+            'form': form,
+            'topRecipe': topRecipe,
+            'randomRecipes': randomRecipes
         })
 
 @login_required

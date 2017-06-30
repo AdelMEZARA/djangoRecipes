@@ -11,25 +11,27 @@
         <div>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
-                </br><li><label>{{ form.name.label }} :</label>
+                </br><li><label>{{ form.name.label }} :</label></br>
                 {{ form.name|attr:'class:form-control'|attr:'placeholder:Nom de la recette' }}</li>
-                </br><li><label>{{ form.type.label }} :</label>
+                </br><li><label>{{ form.type.label }} :</label></br>
                     {{ form.type|attr:'class:form-control' }}</li>
-                </br><li><label>{{ form.difficultyLevel.label }} :</label>
+                </br><li><label>{{ form.difficultyLevel.label }} :</label></br>
                     {{ form.difficultyLevel|attr:'class:form-control' }}</li>
-                </br><li><label>{{ form.cost.label }} :</label>
+                </br><li><label>{{ form.cost.label }} :</label></br>
                     {{ form.cost|attr:'class:form-control'|attr:'placeholder:Coût de la recette' }}</li>
-                </br><li><label>{{ form.prepareTime.label }} :</label>
+                </br><li><label>{{ form.prepareTime.label }} :</label></br>
                     {{ form.prepareTime|attr:'class:form-control'|attr:'placeholder:Temps de préparation en minutes' }}</li>
-                </br><li><label>{{ form.cookTime.label }} :</label>
+                </br><li><label>{{ form.cookTime.label }} :</label></br>
                     {{ form.cookTime|attr:'class:form-control'|attr:'placeholder:Temps de cuisson en minutes' }}</li>
-                </br><li><label>{{ form.restTime.label }} :</label>
+                </br><li><label>{{ form.restTime.label }} :</label></br>
                     {{ form.restTime|attr:'class:form-control'|attr:'placeholder:Temps de repos en minutes' }}</li>
-                </br><li><label>{{ form.steps.label }} :</label>
+                </br><li><label>{{ form.description.label }} :</label></br>
+                    {{ form.description|attr:'class:form-control'|attr:'placeholder:Décrivez votre recette' }}</li>
+                </br><li><label>{{ form.steps.label }} :</label></br>
                     {{ form.steps|attr:'class:form-control'|attr:'placeholder:Décrivez les étapes de préparation de votre recette' }}</li>
-                </br><li><label>{{ form.ingredientList.label }} :</label>
+                </br><li><label>{{ form.ingredientList.label }} :</label></br>
                     {{ form.ingredientList|attr:'class:form-control'|attr:'placeholder:Veuillez indiquer les ingrédients qui seront utilisés' }}</li>
-                </br><li><label>Fichiers : </label>
+                </br><li><label>Fichiers : </label></br>
                 <input type="file" name="files" required="" id="id_files" multiple="multiple">
                 </li>
         </br>

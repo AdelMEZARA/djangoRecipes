@@ -60,35 +60,37 @@
             {% endif %}
 			<div>
 				<ul id="featured">
-                    <h3>Top Recette</h3>
-                    <li>
-						<a href="recipes.html"><img src="/static/images/sandwich.jpg" alt="Image"></a>
-						<div>
-							<h2><a href="recipes.html">Ham Sandwich</a></h2>
-						</div>
-					</li>
-                    <h3>Idées Recettes</h3>
-					<li>
-						<a href="recipes.html"><img src="/static/images/sandwich.jpg" alt="Image"></a>
-						<div>
-							<h2><a href="recipes.html">Ham Sandwich</a></h2>
-							<span>by: Anna</span>
-						</div>
-					</li>
-					<li>
-						<a href="recipes.html"><img src="/static/images/biscuit-and-coffee.jpg" alt="Image"></a>
-						<div>
-							<h2><a href="recipes.html">Biscuit &amp; Sandwich</a></h2>
-							<span>by: Sarah</span>
-						</div>
-					</li>
-					<li>
-						<a href="recipes.html"><img src="/static/images/pizza.jpg" alt="Image"></a>
-						<div>
-							<h2><a href="recipes.html">Delicious Pizza</a></h2>
-							<span>by: Rico</span>
-						</div>
-					</li>
+					{% if topRecipe %}
+						<h3>Top Recette</h3>
+						<li>
+							<a href="{% url 'recipesWebsite:showRecipe' topRecipe.id %}">
+								{% with topRecipe.recipeattachment_set.all|first as image %}
+									<img src="/media/{{ image.file }}" width="77" height="77"/>
+								{% endwith %}
+							</a>
+							<div>
+								<h2><a href="{% url 'recipesWebsite:showRecipe' topRecipe.id %}">{{ topRecipe.name }}</a></h2>
+								<span>by: {{ topRecipe.user.username }}</span>
+							</div>
+						</li>
+					{% endif %}
+
+					{% if randomRecipes %}
+						<h3>Idées Recettes</h3>
+						{% for obj in randomRecipes %}
+						<li>
+							<a href="{% url 'recipesWebsite:showRecipe' obj.id %}">
+								{% with obj.recipeattachment_set.all|first as image %}
+									<img src="/media/{{ image.file }}" width="77" height="77"/>
+								{% endwith %}
+							</a>
+							<div>
+								<h2><a href="{% url 'recipesWebsite:showRecipe' obj.id %}">{{ obj.name }}</a></h2>
+								<span>by: {{ obj.user.username }}</span>
+							</div>
+						</li>
+						{% endfor %}
+					{% endif %}
 				</ul>
 			</div>
             <div>
@@ -96,8 +98,8 @@
                     {% if request.user.is_authenticated %}
                         <h5>Connecté en tant que :
                         <b>{{ request.user.username }}</b></h5>
-                    {% endif %}
-				    <a href="{% url 'recipesWebsite:userLogout' %}"><img src="/static/images/logout.png" height="auto" width="200"></a>
+				    	<a href="{% url 'recipesWebsite:userLogout' %}"><img src="/static/images/logout.png" height="auto" width="200"></a>
+					{% endif %}
                 </center>
 			</div>
 		</div>
