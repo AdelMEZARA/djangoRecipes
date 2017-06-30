@@ -1,0 +1,796 @@
+[
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 15,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 16,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 17,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 18,
+  "fields": {
+    "app_label": "recipesWebsite",
+    "model": "recipe"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 19,
+  "fields": {
+    "app_label": "recipesWebsite",
+    "model": "recipeattachment"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 20,
+  "fields": {
+    "app_label": "recipesWebsite",
+    "model": "recipecomment"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 21,
+  "fields": {
+    "app_label": "star_ratings",
+    "model": "rating"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 22,
+  "fields": {
+    "app_label": "star_ratings",
+    "model": "userrating"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "u6aevnl8k2rahuvdmp1cmxr52n3d6r44",
+  "fields": {
+    "session_data": "ZjQ3M2M4MDM5YjNjYmE3Yzk5OGYwNjkwMzc1ZjRiNGFmODM1NDEyMTp7Il9hdXRoX3VzZXJfaWQiOiI0IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIyMDg5NjA5ODdkODNhMTg5YjUxNGVmZDJhYTlkNGY1ZjY3MGM4YWRmIn0=",
+    "expire_date": "2017-07-14T19:05:27.128Z"
+  }
+},
+{
+  "model": "recipesWebsite.recipeattachment",
+  "pk": 11,
+  "fields": {
+    "recipe": 8,
+    "file": "attachments/brochettes_poulet.jpg"
+  }
+},
+{
+  "model": "recipesWebsite.recipeattachment",
+  "pk": 15,
+  "fields": {
+    "recipe": 10,
+    "file": "attachments/salade_feta_oA84TkV.jpg"
+  }
+},
+{
+  "model": "recipesWebsite.recipeattachment",
+  "pk": 16,
+  "fields": {
+    "recipe": 11,
+    "file": "attachments/spaghetti-carbonara.jpg"
+  }
+},
+{
+  "model": "recipesWebsite.recipeattachment",
+  "pk": 17,
+  "fields": {
+    "recipe": 12,
+    "file": "attachments/hamburger.jpg"
+  }
+},
+{
+  "model": "recipesWebsite.recipeattachment",
+  "pk": 18,
+  "fields": {
+    "recipe": 13,
+    "file": "attachments/soupe_carotte.jpg"
+  }
+},
+{
+  "model": "recipesWebsite.recipeattachment",
+  "pk": 19,
+  "fields": {
+    "recipe": 14,
+    "file": "attachments/salade_betterave.jpg"
+  }
+},
+{
+  "model": "recipesWebsite.recipeattachment",
+  "pk": 20,
+  "fields": {
+    "recipe": 15,
+    "file": "attachments/tortilla_legumes.jpg"
+  }
+},
+{
+  "model": "recipesWebsite.recipeattachment",
+  "pk": 21,
+  "fields": {
+    "recipe": 16,
+    "file": "attachments/tartine_chevre_noix.jpg"
+  }
+},
+{
+  "model": "recipesWebsite.recipeattachment",
+  "pk": 22,
+  "fields": {
+    "recipe": 17,
+    "file": "attachments/verrines_framboise.JPG"
+  }
+},
+{
+  "model": "recipesWebsite.recipeattachment",
+  "pk": 23,
+  "fields": {
+    "recipe": 18,
+    "file": "attachments/macarons_chocolat.JPG"
+  }
+},
+{
+  "model": "recipesWebsite.recipeattachment",
+  "pk": 24,
+  "fields": {
+    "recipe": 19,
+    "file": "attachments/tartelettes_myrtilles.jpg"
+  }
+},
+{
+  "model": "recipesWebsite.recipeattachment",
+  "pk": 25,
+  "fields": {
+    "recipe": 8,
+    "file": "attachments/brochettes_poulet_2.jpg"
+  }
+},
+{
+  "model": "star_ratings.rating",
+  "pk": 7,
+  "fields": {
+    "count": 1,
+    "total": 5,
+    "average": "5.000",
+    "content_type": 18,
+    "object_id": 8
+  }
+},
+{
+  "model": "star_ratings.rating",
+  "pk": 9,
+  "fields": {
+    "count": 0,
+    "total": 0,
+    "average": "0.000",
+    "content_type": 18,
+    "object_id": 10
+  }
+},
+{
+  "model": "star_ratings.rating",
+  "pk": 10,
+  "fields": {
+    "count": 0,
+    "total": 0,
+    "average": "0.000",
+    "content_type": 18,
+    "object_id": 15
+  }
+},
+{
+  "model": "star_ratings.rating",
+  "pk": 11,
+  "fields": {
+    "count": 0,
+    "total": 0,
+    "average": "0.000",
+    "content_type": 18,
+    "object_id": 18
+  }
+},
+{
+  "model": "star_ratings.rating",
+  "pk": 12,
+  "fields": {
+    "count": 0,
+    "total": 0,
+    "average": "0.000",
+    "content_type": 18,
+    "object_id": 16
+  }
+},
+{
+  "model": "star_ratings.rating",
+  "pk": 13,
+  "fields": {
+    "count": 0,
+    "total": 0,
+    "average": "0.000",
+    "content_type": 18,
+    "object_id": 14
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 12,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 12,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 12,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 13,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 13,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 13,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 14,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 14,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 14,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 15,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 15,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 15,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 16,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 16,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 16,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 17,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 17,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 17,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can add recipe",
+    "content_type": 18,
+    "codename": "add_recipe"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can change recipe",
+    "content_type": 18,
+    "codename": "change_recipe"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can delete recipe",
+    "content_type": 18,
+    "codename": "delete_recipe"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can add recipe attachment",
+    "content_type": 19,
+    "codename": "add_recipeattachment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can change recipe attachment",
+    "content_type": 19,
+    "codename": "change_recipeattachment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 57,
+  "fields": {
+    "name": "Can delete recipe attachment",
+    "content_type": 19,
+    "codename": "delete_recipeattachment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 58,
+  "fields": {
+    "name": "Can add recipe comment",
+    "content_type": 20,
+    "codename": "add_recipecomment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 59,
+  "fields": {
+    "name": "Can change recipe comment",
+    "content_type": 20,
+    "codename": "change_recipecomment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 60,
+  "fields": {
+    "name": "Can delete recipe comment",
+    "content_type": 20,
+    "codename": "delete_recipecomment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 61,
+  "fields": {
+    "name": "Can add rating",
+    "content_type": 21,
+    "codename": "add_rating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 62,
+  "fields": {
+    "name": "Can change rating",
+    "content_type": 21,
+    "codename": "change_rating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 63,
+  "fields": {
+    "name": "Can delete rating",
+    "content_type": 21,
+    "codename": "delete_rating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 64,
+  "fields": {
+    "name": "Can add user rating",
+    "content_type": 22,
+    "codename": "add_userrating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 65,
+  "fields": {
+    "name": "Can change user rating",
+    "content_type": 22,
+    "codename": "change_userrating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 66,
+  "fields": {
+    "name": "Can delete user rating",
+    "content_type": 22,
+    "codename": "delete_userrating"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$36000$VzFHNMkJ2XvZ$RSTohuQZ/dZJ7dlvBRAhyWqtSn7MG5VO+kVUKEF7Gy4=",
+    "last_login": "2017-06-30T19:05:27.126Z",
+    "is_superuser": false,
+    "username": "amezara",
+    "first_name": "",
+    "last_name": "",
+    "email": "amezara@django.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2017-06-30T19:05:21.438Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "recipesWebsite.recipe",
+  "pk": 8,
+  "fields": {
+    "name": "Brochette de poulet",
+    "description": "Essayez cette pr\u00e9paration de brochettes au poulet succulente.",
+    "type": "P",
+    "difficultyLevel": 1,
+    "cost": "10.00",
+    "prepareTime": 15,
+    "restTime": 40,
+    "cookTime": 10,
+    "ingredientList": "Pour 4 personnes : \r\n2 blancs de poulet, 1 oignon rouge, 2 cuill\u00e8res \u00e0 soupe de jus de citron, 1 gousse d'ail, 1 cuill\u00e8re \u00e0 soupe d'huile d'olive, sel, poivre.",
+    "steps": "Epluchez et \u00e9mincez grossi\u00e8rement l'oignon rouge. \r\n\r\nCoupez les blancs de poulet en morceaux.\r\n\r\nEpluchez et pressez l'ail. \r\n\r\nDans un bol, m\u00e9langez l'huile d'olive, le jus de citron et l'ail. \r\n\r\nSalez, poivrez et laissez mariner les blancs de poulet dans ce m\u00e9lange pendant 40 minutes.\r\n\r\nFormez les brochettes en enfilant sur des pics \u00e0 brochettes les morceaux de poulet en intercalant des morceaux d'oignons.\r\n\r\nFaites cuire au barbecue environ 5 minutes par c\u00f4t\u00e9.\r\n\r\nServez ces brochettes de volaille avec une salade verte et quelques tomates cerises.",
+    "user": 4,
+    "createdAt": "2017-06-30T19:08:50.765Z",
+    "updatedAt": "2017-06-30T20:11:50.691Z"
+  }
+},
+{
+  "model": "recipesWebsite.recipe",
+  "pk": 10,
+  "fields": {
+    "name": "Salade de p\u00e2tes \u00e0 la f\u00eata",
+    "description": "Quoi de plus rafraichissant qu'une salade de p\u00e2tes \u00e0 la f\u00eata, \u00e0 essayer imm\u00e9diatement !",
+    "type": "P",
+    "difficultyLevel": 1,
+    "cost": "5.00",
+    "prepareTime": 10,
+    "restTime": 0,
+    "cookTime": 10,
+    "ingredientList": "Pour 2 personnes : 200 g de p\u00e2tes, 10 tomates cerise, 50 g de f\u00eata, une poign\u00e9e d'olives noires d\u00e9noyaut\u00e9es, 1 cuill\u00e8re \u00e0 caf\u00e9 de vinaigre de X\u00e9res, 2 cuill\u00e8res \u00e0 soupe d'huile d'olive, basilic.",
+    "steps": "Faites cuire les p\u00e2tes dans une casserole d'eau bouillante l\u00e9g\u00e8rement sal\u00e9e le temps indiqu\u00e9 sur l'emballage.\r\nPendant ce temps, lavez les tomates cerises et coupez les en deux. Coupez \u00e9galement la f\u00eata en petits d\u00e9s.\r\n\u00c9gouttez les p\u00e2tes et passez-les sous l'eau froide.\r\nVersez les p\u00e2tes dans un saladier et m\u00e9langez les avec les tomates, les olives, la f\u00eata, l'huile d'olive et le vinaigre.\r\nR\u00e9servez au frais. Au moment de servir la salade, sortez la du r\u00e9frig\u00e9rateur et ajoutez quelques feuilles de basilic.",
+    "user": 4,
+    "createdAt": "2017-06-30T19:16:35.494Z",
+    "updatedAt": "2017-06-30T19:16:35.494Z"
+  }
+},
+{
+  "model": "recipesWebsite.recipe",
+  "pk": 11,
+  "fields": {
+    "name": "Spaghetti alla carbonara",
+    "description": "D\u00e9couvrez cette nouvelle recette de spaghettis alla carbonara tout \u00e0 fait incroyable !",
+    "type": "P",
+    "difficultyLevel": 1,
+    "cost": "5.00",
+    "prepareTime": 10,
+    "restTime": 0,
+    "cookTime": 15,
+    "ingredientList": "Pour 4 personnes : 400 g de spaghetti, 200 g de lardons, 4 oeufs, 50 g de parmesan frais r\u00e2p\u00e9, sel, poivre.",
+    "steps": "Faites revenir les lardons dans une po\u00eale sans mati\u00e8re grasse.\r\nFaites cuire les p\u00e2tes dans une casserole d'eau bouillante sal\u00e9e le temps indiqu\u00e9 sur l'emballage.\r\nPendant ce temps cassez les oeufs dans un saladier, m\u00e9langez-les \u00e0 la fourchette avec le parmesan r\u00e2p\u00e9.\r\n\u00c9gouttez les p\u00e2tes, reversez-les dans la casserole, ajoutez les lardons, versez les oeufs, salez, poivrez puis m\u00e9langez 2 minutes sur feu doux.",
+    "user": 4,
+    "createdAt": "2017-06-30T19:18:32.958Z",
+    "updatedAt": "2017-06-30T19:18:32.958Z"
+  }
+},
+{
+  "model": "recipesWebsite.recipe",
+  "pk": 12,
+  "fields": {
+    "name": "Hamburger",
+    "description": "Profitez d'un bon moment entre amis le tout accompagn\u00e9 avec un hamburger tout droit pr\u00e9par\u00e9 par Django Recipes !",
+    "type": "P",
+    "difficultyLevel": 1,
+    "cost": "10.00",
+    "prepareTime": 10,
+    "restTime": 0,
+    "cookTime": 10,
+    "ingredientList": "Pour 4 personnes : 4 pains \u00e0 hamburgers, 4 steaks hach\u00e9s, 4 tranches de cheddar, 1 grosse tomate, 4 feuilles de salade, 4 cuill\u00e8res \u00e0 caf\u00e9 d'oignons frits, sauce : barbecue, ketchup ou moutarde.",
+    "steps": "Lavez la tomate et coupez la en rondelles. Lavez les feuilles de salade.\r\nFaites cuire les steaks dans une po\u00eale avec un morceau de beurre. D\u00e9posez une tranche de cheddar sur chaque morceau de viande et laissez fondre.\r\nPasser les pains \u00e0 hamburgers au grill-pain.\r\nPr\u00e9parez vos hamburgers : d\u00e9posez un peu de sauce de votre choix sur une des tranches de pain, ajoutez une ou deux rondelles de tomate, le steak hach\u00e9 et le cheddar, les oignons frits et la feuille de salade. Remettez un peu de sauce si vous le souhaitez et refermez le hamburger avec l'autre morceau de pain.",
+    "user": 4,
+    "createdAt": "2017-06-30T19:20:47.188Z",
+    "updatedAt": "2017-06-30T19:20:47.188Z"
+  }
+},
+{
+  "model": "recipesWebsite.recipe",
+  "pk": 13,
+  "fields": {
+    "name": "Soupe de carotte",
+    "description": "Une entr\u00e9e sp\u00e9ciale minceur, d\u00e9gustez cette d\u00e9licieuse soupe de carotte.",
+    "type": "E",
+    "difficultyLevel": 1,
+    "cost": "5.00",
+    "prepareTime": 15,
+    "restTime": 0,
+    "cookTime": 30,
+    "ingredientList": "Pour 4 personnes : 500 g de carottes, 400 g de pommes de terre, 1 cuill\u00e8re \u00e0 soupe de cr\u00e8me fra\u00eeche, coriandre fra\u00eeche, sel, poivre.",
+    "steps": "Epluchez les pommes de terre ainsi que les carottes.\r\nDisposez les l\u00e9gumes dans une casserole et recouvrez-les d'eau.\r\nFaites les cuire 30 minutes.\r\nMixez les l\u00e9gumes avec l'eau de cuisson. Si la soupe est trop \u00e9paisse ajoutez un peu d'eau. Ajoutez la cr\u00e8me fra\u00eeche, salez, poivrez et m\u00e9langez.\r\nSaupoudrez de coriandre fra\u00eeche cisel\u00e9e.",
+    "user": 4,
+    "createdAt": "2017-06-30T19:23:52.236Z",
+    "updatedAt": "2017-06-30T19:23:52.236Z"
+  }
+},
+{
+  "model": "recipesWebsite.recipe",
+  "pk": 14,
+  "fields": {
+    "name": "Salade de betterave",
+    "description": "D\u00e9couvrez cette nouvelle salade de betterave rouge \u00e0 l'ail !",
+    "type": "E",
+    "difficultyLevel": 1,
+    "cost": "5.00",
+    "prepareTime": 10,
+    "restTime": 0,
+    "cookTime": 0,
+    "ingredientList": "Pour 4 personnes : 1 betterave rouge cuite, 1 gousse d'ail, 1 cuill\u00e8re \u00e0 soupe de persil cisel\u00e9, 1 cuill\u00e8re \u00e0 caf\u00e9 de vinaigre, 2 cuill\u00e8res \u00e0 soupe d'huile.",
+    "steps": "Coupez la betterave en morceaux. Versez-les dans un saladier.\r\nEpluchez et hachez l'ail.\r\nDans le saladier, ajoutez l'ail, le vinaigre et l'huile. M\u00e9langez le tout. Saupoudrez de persil.\r\nR\u00e9servez au frais jusqu'au moment de servir.",
+    "user": 4,
+    "createdAt": "2017-06-30T19:26:54.041Z",
+    "updatedAt": "2017-06-30T19:26:54.041Z"
+  }
+},
+{
+  "model": "recipesWebsite.recipe",
+  "pk": 15,
+  "fields": {
+    "name": "Tortilla aux l\u00e9gumes",
+    "description": "Une recette de tortilla aux l\u00e9gumes que vous n'avez jamais vu encore auparavant. N'h\u00e9sitez plus et essayez l\u00e0.",
+    "type": "E",
+    "difficultyLevel": 1,
+    "cost": "10.00",
+    "prepareTime": 20,
+    "restTime": 0,
+    "cookTime": 45,
+    "ingredientList": "Pour 4 personnes : 4 pommes de terre, 5 oeufs, 1 courgette, 1/2 poivron rouge, 2 tomates, 60 g de gruy\u00e8re r\u00e2p\u00e9, sel, poivre, huile d'olive.",
+    "steps": "Faites cuire vos pommes de terre \u00e9pluch\u00e9es dans une casserole d'eau pendant une vingtaine de minutes.\r\nLavez, \u00e9p\u00e9pinez et coupez le poivron en d\u00e9s. Lavez et coupez la courgette en lamelles.\r\nFaites revenir ces 2 l\u00e9gumes dans une casserole avec un filet d'huile d'olive pendant 10 minutes.\r\nLavez et couper les tomates en morceaux. Dans un saladier, battez les oeufs en omelette, salez, poivrez et ajoutez le fromage r\u00e2p\u00e9.\r\nAjoutez les l\u00e9gumes ainsi que les pommes de terre coup\u00e9es en morceaux. Versez la pr\u00e9paration dans un plat rond et enfournez 25 minutes th 6 (180\u00b0).",
+    "user": 4,
+    "createdAt": "2017-06-30T19:29:58.938Z",
+    "updatedAt": "2017-06-30T19:29:58.938Z"
+  }
+},
+{
+  "model": "recipesWebsite.recipe",
+  "pk": 16,
+  "fields": {
+    "name": "Tartines au ch\u00e8vre et noix",
+    "description": "Une, deux, trois, r\u00e9aliser une multitude de tartines pour vos invit\u00e9s et faites leur d\u00e9couvrir les saveurs Django Recipes.",
+    "type": "E",
+    "difficultyLevel": 1,
+    "cost": "10.00",
+    "prepareTime": 5,
+    "restTime": 0,
+    "cookTime": 10,
+    "ingredientList": "Pour 2 personnes : 2 tranches de pain de campagne, 40 g de ch\u00e8vre frais, 6 noix, 1 cuill\u00e8re \u00e0 caf\u00e9 de cr\u00e8me fra\u00eeche \u00e9paisse, 1 gousse d'ail, huile d'olive, sel, poivre.",
+    "steps": "Hachez les noix. Epluchez et pressez la gousse d'ail.\r\nDans un bol, \u00e9crasez le ch\u00e8vre frais. M\u00e9langez-le avec l'ail, la cr\u00e8me fra\u00eeche, les noix hach\u00e9es et un filet d'huile d'olive. Salez et poivrez.\r\nTartinez les tranches de pain de campagne de cette pr\u00e9paration au ch\u00e8vre et passez les tartines 5 minutes sous le grill du four.\r\nServez cette entr\u00e9e avec quelques feuilles de salade verte assaisonn\u00e9e d'une vinaigrette \u00e0 l'huile de noix. En doublant les doses cette entr\u00e9e peut servir de plat principal.",
+    "user": 4,
+    "createdAt": "2017-06-30T19:33:23.430Z",
+    "updatedAt": "2017-06-30T19:33:23.430Z"
+  }
+},
+{
+  "model": "recipesWebsite.recipe",
+  "pk": 17,
+  "fields": {
+    "name": "Verrines de framboises",
+    "description": "Vous pensiez que les verrines \u00e9taient compliqu\u00e9es \u00e0 faire ? Vous allez changer d'avis avec ce d\u00e9licieux dessert aux framboises.",
+    "type": "D",
+    "difficultyLevel": 1,
+    "cost": "10.00",
+    "prepareTime": 15,
+    "restTime": 120,
+    "cookTime": 0,
+    "ingredientList": "Pour 4 personnes : 350 g de framboises, 250 g de mascarpone, 80 g de sucre, 2 oeufs.",
+    "steps": "Dans un r\u00e9cipient, m\u00e9langez au fouet les jaunes d'oeufs, le sucre et le mascarpone.\r\nMontez les blancs d'oeufs en neige puis int\u00e9grez-les d\u00e9licatement au m\u00e9lange.\r\nDans les verrines (une par personne), disposez une couche de framboises, une couche de cr\u00e8me et terminez par quelques framboises fra\u00eeches.\r\nLaissez reposer au r\u00e9frig\u00e9rateur au moins 2 heures avant de servir.",
+    "user": 4,
+    "createdAt": "2017-06-30T19:36:35.383Z",
+    "updatedAt": "2017-06-30T19:36:35.383Z"
+  }
+},
+{
+  "model": "recipesWebsite.recipe",
+  "pk": 18,
+  "fields": {
+    "name": "Macarons au chocolat",
+    "description": "Pr\u00e9parez de d\u00e9licieux macarons pour les amoureux de chocolat gr\u00e2ce \u00e0 cette recette sp\u00e9cialement faite pour vous !",
+    "type": "D",
+    "difficultyLevel": 2,
+    "cost": "10.00",
+    "prepareTime": 20,
+    "restTime": 60,
+    "cookTime": 20,
+    "ingredientList": "3 blancs d'oeufs, 115 g de poudre d'amandes, 175 g de sucre glace, 1 cas de cacao, 100 g de chocolat noir, 20 cl de cr\u00e8me fra\u00eeche, 75 g de beurre, colorant alimentaire.",
+    "steps": "Mixez la poudre d'amandes avec le cacao et le sucre glace. Tamisez le tout.\r\nMontez les blancs d'oeufs en neige ferme avec une pinc\u00e9e de sel. Incorporez d\u00e9licatement le m\u00e9lange \u00e0 base d'amandes. Ajoutez 15 gouttes de colorant brun.\r\nVersez cette pr\u00e9paration dans une poche \u00e0 douille et former des petits d\u00f4mes sur une plaque \u00e0 p\u00e2tisserie recouverte de papier sulfuris\u00e9. Laisser reposer \u00e0 l'air ambiant 1 heure. Enfournez entre 10 et 13 minutes th 5/6 (170\u00b0).\r\nPr\u00e9parez la ganache en faisant fondre dans une casserole le chocolat, le beurre et la cr\u00e8me. Laissez refroidir.\r\nD\u00e9moulez les macarons et les garnir d'une cuill\u00e8re de ganache. Conservez-les au r\u00e9frig\u00e9rateur.",
+    "user": 4,
+    "createdAt": "2017-06-30T19:40:23.946Z",
+    "updatedAt": "2017-06-30T19:40:23.946Z"
+  }
+},
+{
+  "model": "recipesWebsite.recipe",
+  "pk": 19,
+  "fields": {
+    "name": "Tartelettes aux myrtilles",
+    "description": "Hmm les myrtilles, rien de mieux que lorsqu'elles sont d\u00e9pos\u00e9es sur une tarte \u00e0 la cr\u00e8me d'amandes.",
+    "type": "D",
+    "difficultyLevel": 1,
+    "cost": "10.00",
+    "prepareTime": 15,
+    "restTime": 0,
+    "cookTime": 30,
+    "ingredientList": "Pour 4 personnes : 1 rouleau de p\u00e2te sabl\u00e9e, 350 g de myrtilles fra\u00eeches ou surgel\u00e9es, 2 oeufs, 75 g de beurre, 75 g de poudre d'amandes, 75 g de sucre.",
+    "steps": "Etalez la p\u00e2te sabl\u00e9e dans 4 moules \u00e0 tartelettes. Piquez la p\u00e2te et faites la cuire \u00e0 blanc 10 minutes th 6 (180\u00b0).\r\nDans un bol, m\u00e9langez le beurre ramolli, avec le sucre, la poudre d'amandes et les oeufs.\r\nTapissez le fond de tarte de la cr\u00e8me d'amandes.\r\nRecouvrez des myrtilles fra\u00eeches ou d\u00e9congel\u00e9es.\r\nEnfournez 25 minutes environ th 6.",
+    "user": 4,
+    "createdAt": "2017-06-30T19:42:45.082Z",
+    "updatedAt": "2017-06-30T19:42:45.082Z"
+  }
+},
+{
+  "model": "star_ratings.userrating",
+  "pk": 6,
+  "fields": {
+    "created": "2017-06-30T20:01:18.059Z",
+    "modified": "2017-06-30T20:01:18.059Z",
+    "user": 4,
+    "ip": "127.0.0.1",
+    "score": 5,
+    "rating": 7
+  }
+}
+]

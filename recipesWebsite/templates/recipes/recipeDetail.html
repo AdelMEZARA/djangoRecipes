@@ -10,13 +10,17 @@
 				<div id="content">
 					<div>
 						<div>
-							<h3>{{ recipe.name }} - {% if request.user.is_authenticated and recipe.user.id == request.user.id %}
-                                <a href="{% url 'recipesWebsite:editRecipe' recipe.id %}">Modifier</a> -
-                                <a href="{% url 'recipesWebsite:deleteRecipe' recipe.id %}">Supprimer</a>
-                                {% endif %}</h3>
+                            <h3>{{ recipe.name }}</h3>
+                                {% if request.user.is_authenticated and recipe.user.id == request.user.id %}
+                                    <a href="{% url 'recipesWebsite:editRecipe' recipe.id %}"><img src="/static/images/edit_icon.png" height="30" width="auto"></a>
+                                    <a href="{% url 'recipesWebsite:deleteRecipe' recipe.id %}"><img src="/static/images/delete_icon.png" height="30" width="auto"></a>
+                                {% endif %}
 							<p>
                                 {{ recipe.description }}
 							</p>
+                            {% with recipe.recipeattachment_set.all|first as image %}
+                                <img src="/media/{{ image.file }}" width="auto" height="430"/>
+                            {% endwith %}
 
                             <br/>
 
@@ -100,4 +104,5 @@
 					</div>
 				</div>
 			</div>
+</div>
 {% endblock %}
